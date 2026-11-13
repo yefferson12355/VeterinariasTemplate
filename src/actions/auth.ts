@@ -198,7 +198,7 @@ export async function linkOAuthAccount(
     if (!validatedInput.success) return
 
     noStore()
-    await psLinkOAuthAccount.execute({ userId: validatedInput.data.userId })
+    await psLinkOAuthAccount.execute({ userId: validatedInput.data.userID })
   } catch (error) {
     console.error(error)
     throw new Error("Error linking OAuth account")
