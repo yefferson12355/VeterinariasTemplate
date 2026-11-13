@@ -60,7 +60,7 @@ export async function addBooking(
         lastName: validatedInput.data.lastName,
         email: validatedInput.data.email,
         phone: validatedInput.data.phone,
-        message: validatedInput.data.message,
+        message: validatedInput.data.message ?? undefined,
         status: validatedInput.data.status,
       })
       .returning()
@@ -81,7 +81,7 @@ export async function addBooking(
           lastName: validatedInput.data.lastName,
           email: validatedInput.data.email,
           phone: validatedInput.data.phone,
-          message: validatedInput.data.message,
+          message: validatedInput.data.message ?? "",
         }),
       })
     } catch (error) {
@@ -142,7 +142,7 @@ export async function updateBooking(
         lastName: validatedInput.data.lastName,
         email: validatedInput.data.email,
         phone: validatedInput.data.phone,
-        message: validatedInput.data.message,
+        message: validatedInput.data.message ?? undefined,
         status: validatedInput.data.status,
       })
       .where(eq(bookings.id, validatedInput.data.id))

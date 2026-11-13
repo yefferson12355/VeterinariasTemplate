@@ -25,7 +25,7 @@ export const {
   },
   events: {
     async linkAccount({ user }) {
-      if (user.id) await linkOAuthAccount({ userId: user.id })
+      if (user.id) await linkOAuthAccount({ userID: user.id })
     },
   },
   callbacks: {

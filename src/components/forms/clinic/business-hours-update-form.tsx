@@ -83,8 +83,14 @@ export function BusinessHoursUpdateForm({
       try {
         const result = await updateBusinessHours({
           id: currentBusinessHours.id,
-          ...periods,
-        } as UpdateBusinessHoursInput)
+          mondayPeriods: periods.monday,
+          tuesdayPeriods: periods.tuesday,
+          wednesdayPeriods: periods.wednesday,
+          thursdayPeriods: periods.thursday,
+          fridayPeriods: periods.friday,
+          saturdayPeriods: periods.saturday,
+          sundayPeriods: periods.sunday,
+        } satisfies UpdateBusinessHoursInput)
 
         if (result === "success") {
           toast({ title: "Horario de atención fueron actualizados" })

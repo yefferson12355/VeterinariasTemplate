@@ -25,6 +25,7 @@ export default async function ClinicPage(): Promise<JSX.Element> {
   if (!session) redirect(DEFAULT_UNAUTHENTICATED_REDIRECT)
 
   const clinic = await getClinic()
+  if (!clinic) throw new Error("No se pudieron cargar los datos de la clínica")
 
   return (
     <Shell variant="sidebar">

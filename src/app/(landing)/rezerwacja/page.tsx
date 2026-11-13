@@ -9,6 +9,8 @@ import Balancer from "react-wrap-balancer"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { BookingAddForm } from "@/components/forms/booking/booking-add-form"
 
+export const dynamic = "force-dynamic"
+
 export default async function AddBookingPage(): Promise<JSX.Element> {
   const businessHours = await getBusinessHours()
   const datesUnavailable = await getDatesUnavailableAsAnArrayOfDates()

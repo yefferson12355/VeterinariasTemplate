@@ -28,13 +28,13 @@ export default auth((req) => {
     process.env.NODE_ENV === "development" &&
     req.nextUrl.pathname.startsWith("/admin")
 
-  if (isApiAuthRoute) return null
+  if (isApiAuthRoute) return
 
   if (isAuthRoute) {
     if (authenticated) {
       return Response.redirect(new URL(DEFAULT_SIGNIN_REDIRECT, req.nextUrl))
     }
-    return null
+    return
   }
 
   if (!authenticated && !isPublicRoute && !isDevelopmentAdmin) {
@@ -43,7 +43,7 @@ export default auth((req) => {
     )
   }
 
-  return null
+  return
 })
 
 export const config = {

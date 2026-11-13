@@ -36,7 +36,7 @@ export function BookingsTableShell({
 }: BookingsTableShellProps): JSX.Element {
   const toast = useToast()
   const [isPending, startTransition] = React.useTransition()
-  const [selectedRowIDs, setSelectedRowIDs] = React.useState<number[]>([])
+  const [selectedRowIDs, setSelectedRowIDs] = React.useState<string[]>([])
 
   const columns = React.useMemo<ColumnDef<Booking, unknown>[]>(
     () => [

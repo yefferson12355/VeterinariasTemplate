@@ -34,6 +34,7 @@ export function ContactForm(): JSX.Element {
       email: "",
       phone: "",
       message: "",
+      rodo: false,
     },
   })
 
@@ -62,7 +63,7 @@ export function ContactForm(): JSX.Element {
           {/* Name */}
           <FormField
             control={form.control}
-            name="name"
+            name="firstName"
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormLabel className="text-[4.4vw] font-medium text-greenContactFormText md:text-sm">
@@ -70,14 +71,14 @@ export function ContactForm(): JSX.Element {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    aria-invalid={!!form.formState.errors.name}
+                    aria-invalid={!!form.formState.errors.firstName}
                     placeholder="Jan"
                     {...field}
                     className="h-[8vw] min-h-[40px] bg-transparent text-input placeholder:text-input/70 md:h-10"
                   />
                 </FormControl>
                 <UncontrolledFormMessage
-                  message={form.formState.errors.name?.message}
+                  message={form.formState.errors.firstName?.message}
                 />
               </FormItem>
             )}

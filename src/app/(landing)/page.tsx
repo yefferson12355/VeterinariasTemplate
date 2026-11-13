@@ -6,6 +6,8 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { ServicesSection } from "@/components/sections/services-section"
 import { TeamSection } from "@/components/sections/team-section"
 
+export const dynamic = "force-dynamic"
+
 export default async function Home(): Promise<JSX.Element> {
   const clinic = await getClinic()
 

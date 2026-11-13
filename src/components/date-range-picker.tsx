@@ -113,7 +113,6 @@ export function DateRangePicker({
         <PopoverContent className="w-auto p-0" align={align}>
           <Calendar
             locale={pl}
-            initialFocus
             mode="range"
             defaultMonth={date?.from}
             selected={date}

@@ -74,7 +74,7 @@ export function BookingAddForm({
     defaultValues: {
       type: "weterynarz",
       date: undefined,
-      time: undefined,
+      time: "",
       firstName: "",
       lastName: "",
       email: "",
@@ -239,10 +239,9 @@ export function BookingAddForm({
                       selected={field.value}
                       onSelect={(date) => {
                         field.onChange(date)
-                        form.setValue("time", undefined)
+                        form.setValue("time", "")
                       }}
                       disabled={isDateDisabled}
-                      initialFocus
                     />
                   </PopoverContent>
                 </Popover>

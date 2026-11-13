@@ -47,7 +47,7 @@ export function toSentenceCase(str: string): string {
     .replace(/^./, (str) => str.toUpperCase())
 }
 
-export function generateTimeOptions(interval: number): string[] | null {
+export function generateTimeOptions(interval: number): string[] {
   if (Number.isInteger(interval) && interval >= 0 && interval <= 60) {
     const timeList: string[] = []
     let currentTime: Date = new Date(0, 0, 0, 0, 0, 0)
@@ -62,7 +62,9 @@ export function generateTimeOptions(interval: number): string[] | null {
     console.error(
       "Invalid interval. Please provide a positive integer between 0 and 60."
     )
-    return null
+    throw new Error(
+      "Invalid interval. Please provide a positive integer between 0 and 60."
+    )
   }
 }
 

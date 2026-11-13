@@ -6,9 +6,9 @@ import auth from "@/lib/auth"
 
 export default async function AdminPage() {
   const session = await auth()
-  session?.user
-    ? redirect("/admin/dostepnosc")
-    : redirect(DEFAULT_UNAUTHENTICATED_REDIRECT)
+  if (session?.user) {
+    redirect("/admin/dostepnosc")
+  }
 
-  return <div>Admin Page</div>
+  redirect(DEFAULT_UNAUTHENTICATED_REDIRECT)
 }

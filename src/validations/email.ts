@@ -51,6 +51,7 @@ export const contactFormSchema = z.object({
     .max(10240, {
       message: "El mensaje no puede tener más de 10240 caracteres",
     }),
+  rodo: z.boolean().default(false),
 })
 
 export type EmailVerificationFormInput = z.infer<typeof emailVerificationSchema>

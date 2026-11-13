@@ -16,7 +16,7 @@
     "url": "https://github.com/pjborowiecki/ARKA-Veterinary-Clinic-Page-and-Appointment-Booking-System/issues"
   },
   "type": "module",
-  
+
   "scripts": {
     "dev": "next dev --experimental-https",
     "build": "next build",
@@ -77,8 +77,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "date-fns": "^4.4.0",
     "dayjs": "^1.11.13",
     "drizzle-orm": "^0.33.0",
+    "nanoid": "^6.0.2",
     "next": "14.2.7",
     "next-auth": "5.0.0-beta.18",
     "next-themes": "^0.3.0",

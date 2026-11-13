@@ -6,7 +6,6 @@ import { DayPicker } from "react-day-picker"
 import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
@@ -51,14 +50,6 @@ function Calendar({
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
         ...classNames,
-      }}
-      components={{
-        IconLeft: ({ ...props }) => (
-          <Icons.chevronLeft className="size-4" {...props} />
-        ),
-        IconRight: ({ ...props }) => (
-          <Icons.chevronRight className="size-4" {...props} />
-        ),
       }}
       {...props}
     />

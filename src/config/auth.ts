@@ -13,7 +13,9 @@ export default {
           signInWithPasswordSchema.safeParse(rawCredentials)
 
         if (validatedCredentials.success) {
-          const user = await getUserByEmail(validatedCredentials.data.email)
+          const user = await getUserByEmail({
+            email: validatedCredentials.data.email,
+          })
           if (!user || !user.passwordHash) return null
 
           const passwordIsValid = await bcryptjs.compare(

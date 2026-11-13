@@ -26,7 +26,7 @@ export const bookingSchema = z.object({
     required_error: "Selecciona la fecha de la cita",
     invalid_type_error: "Tipo de datos no válido",
   }),
-  time: hourSchema,
+  time: hourSchema.unwrap(),
   firstName: z
     .string({
       required_error: "Este campo es obligatorio",

@@ -84,7 +84,7 @@ export async function Footer({
               <div className="flex flex-col gap-2 font-extrabold">
                 {DAYS_OF_WEEK_REARRANGED.map((day) => (
                   <span key={day}>
-                    {(DAY_MAPPINGS as { [key: string]: string })[day]}
+                    {DAY_MAPPINGS[day as keyof typeof DAY_MAPPINGS]}
                   </span>
                 ))}
               </div>
